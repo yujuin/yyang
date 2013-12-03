@@ -1,0 +1,496 @@
+T1      WRAP MODEL
+T2      Lavaca River Basin Water Availability Model 
+T3     11/08/2010  DRAFT SUBJECT TO REVISION
+** Run 3: full diversion amounts, authorized area capacity, no term permits, and one-hundred percent reuse
+JD    57    1940       1      -1      -1               4                       
+RO    -1                        
+**
+** UC FOR COLLINS APPLICATION 5579
+UC   INT     288     288     288     288     288     288
+UC           288     288     288     400     400     400
+UC  5579       0       0       0      60     200     403
+UC           403     200       0       0       0       0
+UC     1  0.0700  0.0600  0.0700  0.0700  0.0800  0.1000
+UC        0.1300  0.1200  0.0900  0.0800  0.0600  0.0700
+UC     2   0.076   0.074   0.092   0.088   0.092   0.085
+UC         0.079   0.087   0.083   0.086   0.082   0.077
+UC     3   0.000   0.001   0.003   0.083   0.149   0.261
+UC         0.333   0.154   0.008   0.005   0.002   0.000
+UC     7  0.0833  0.0833  0.0833  0.0833  0.0833  0.0834
+UC        0.0834  0.0834  0.0834  0.0833  0.0833  0.0833
+UC     8  0.0833  0.0833  0.0833  0.0833  0.0833  0.0834
+UC        0.0834  0.0834  0.0834  0.0833  0.0833  0.0833
+UC IF214  0.0000  0.0000  0.0000  0.1595  0.1738  0.1595
+UC        0.1738  0.1738  0.1595  0.0000  0.0000  0.0000
+UC IF503  0.1117  0.1009  0.1117  0.1081  0.1117  0.1081
+UC        0.0479  0.0479  0.0463  0.0479  0.0463  0.1117
+UCIF1023  0.0768  0.0694  0.0768  0.0743  0.0768  0.1699
+UC        0.0768  0.0768  0.0743  0.0768  0.0743  0.0768
+UCIF1021  0.0770  0.0695  0.0770  0.0745  0.0770  0.1677
+UC        0.0770  0.0770  0.0745  0.0770  0.0745  0.0770
+UCIF1001  0.0565  0.0510  0.0565  0.0546  0.1129  0.1093
+UC        0.1129  0.1129  0.1093  0.1129  0.0546  0.0565
+UC IF816  0.0307  0.0278  0.0307  0.1192  0.1232  0.1192
+UC        0.1232  0.1232  0.1192  0.1232  0.0297  0.0307
+UC IF815  0.0242  0.0219  0.0242  0.1406  0.1454  0.1406
+UC        0.1454  0.1454  0.1406  0.0242  0.0234  0.0242
+UC IF814  0.0321  0.0291  0.0321  0.1183  0.1222  0.1183
+UC        0.1222  0.1222  0.1183  0.1222  0.0311  0.0321
+UC IF807  0.0557  0.0503  0.0557  0.0539  0.1254  0.1213
+UC        0.1254  0.1254  0.1213  0.0557  0.0539  0.0557
+UC IF887  0.0462  0.0417  0.0462  0.1341  0.1386  0.1341
+UC        0.1386  0.1386  0.0447  0.0462  0.0447  0.0462
+UC IF843  0.0630  0.0568  0.0630  0.1116  0.1154  0.1116
+UC        0.1154  0.1154  0.0609  0.0630  0.0609  0.0630
+UC    TA    3050    3040    3050    3050    4100    4100
+UC          4100    4100    4100    3050    3050    3050
+** UC for instream flow restriction for App 5168
+UC  1018     254     253     254     253     253     253
+UC           254     253     253     253     254     253
+** UC for instream flow restriction for App. 5370
+UC   916    60.2    60.2    60.2    60.2    60.2    60.3
+UC          60.3    60.2    60.2    60.2    60.2    60.3
+UCBAYEST    5196    7908    5337   48007   71897   70892
+UC          7778   16337   61128   43551    4064    4876
+UC   INT       0       0       0       0       0       0
+UC             0       0       0       0       0   12000
+UCBAYES1  0.0150  0.0228  0.0154  0.1384  0.2072  0.2043
+UC        0.0224  0.0471  0.1762  0.1255  0.0117  0.0140
+** All 100, 200, 300 and 400 control point numbers are on the Lavaca River or one of its tributaries
+** All 500 and 600 control point numbers are on the Navidad River or one of its tributaries
+** All 700 control point numbers are on Mustang Creek or East Mustang Creek
+** All 800 control point numbers are on West Mustang Creek
+** All 900 and 1000 control point numbers are on the Sandy, West Sandy, or
+** Middle Sandy Creek or one of their tributaries
+** For the control point numbers T=Tributary, W=West, M=Middle, and E=East
+** For the control point numbers DV=DiVersion, WW=Waste Water discharge, 
+** GS=Gage Station, CB=ComBine point, RF=Return Flow, OS=On Stream reservoir,
+** WQ=Water Quality point, and EP=End Point
+**     2       3       4       5       6       7       8       9      10
+** COMPUTATIONAL CP FOR INTERRUPTIBLE WATER
+CPINTER1     OUT                       2    NONE    NONE
+CP DV402   WW401                       7           GS400      -1
+CP WW401   GS400                       7           GS400      -1 
+CP GS400   CB330                       1
+CPTDV333  TDV332                       7           GS300      -1 
+CPTDV332   CB330                       7           GS300      -1 
+CPTWW331   CB330                       7           GS300      -1 
+CP CB330   CB320                       7           GS300      -1
+CPTOS323  TWW322                       7           GS300      -1 
+CPTWW322  TOS321                       7           GS300      -1 
+CPTOS321   CB320                       7           GS300      -1 
+CP CB320   CB310                       7           GS300      -1 
+CPTOS313   CB310                       7           GS300      -1 
+CPTOS312   CB310                       7           GS300      -1 
+CPTOS311   CB310                       7           GS300      -1 
+CP CB310   DV301                       7           GS300      -1 
+CP DV301   GS300                       7           GS300      -1 
+CP GS300   DV214                       1
+CP DV214   DV215                       7           GS300      -2 
+CP DV215   DV216                       7           GS300      -2 
+CP DV216   DV213                       7           GS300      -2 
+CP DV213   DV212                       7           GS300      -2 
+CP DV212   DV211                       7           GS300      -2 
+CP DV211   WQ002                       7           GS300      -2 
+CP WQ002   20955                       7           GS300      -2
+CP 20955   CB220                       7           GS300      -2
+CPTWW217   CB220                       7           GS300      -1 
+CP CB220   CB210                       7           GS300      -2 
+CP OS623   CB620                       7           GS600      -1 
+CP WW622   CB620                       7           GS600      -1 
+CP WW621   CB620                       7           GS600      -1 
+CPTDV626   CB620                       7           GS600      -1
+CP CB620   CB610                       7           GS600      -1 
+CP CB610   GS600                       7           GS600      -1
+CP GS600   CB560                       1
+CPTOS554   CB560                       7           GS550      -1
+CP CB560   DV553                       7           GS550      -1
+CP DV553   DV551                       7           GS550      -1
+CP DV551   GS550                       7           GS550      -1
+CP GS550   DV504                       1
+CP DV504   DV503                       7           GS500      -1
+CP RF505   DV503                       7           GS500      -1
+CP DV503   RF502                       7           GS500      -1
+CP RF502   DV501                       7           GS500      -1
+CP WQ005   DV501                       7           GS500      -1
+CP DV501   CB510                       7           GS500      -1
+CPOS1052  CB1040                       7          GS1000      -1
+CPOS1051  CB1040                       7          GS1000      -1
+CPDV1042  CB1040                       7          GS1000      -1
+CPCB1040  CB1010                       7          GS1000      -1
+CPDV1034  OS1033                       7          GS1000      -1
+CPOS1033  DV1031                       7          GS1000      -1
+CPDV1031  CB1030                       7          GS1000      -1
+CPCB1030  DV1023                       7          GS1000      -1
+CPDV1023  DV1021                       7          GS1000      -1
+CPDV1021  DV1020                       7          GS1000      -1
+CPDV1020  DV1018                       7          GS1000      -1
+CPDV1018  RF1017                       7          GS1000      -1
+CPRF1017  RF1016                       7          GS1000      -1
+CPRF1016  RF1015                       7          GS1000      -1
+CPRF1015  RF1014                       7          GS1000      -1
+CPRF1014  RF1012                       7          GS1000      -1
+CPRF1012  RF1011                       7          GS1000      -1
+CPRF1011  CB1010                       7          GS1000      -1
+CPCB1010  DV1002                       7          GS1000      -1
+CPDV1002  DV1001                       7          GS1000      -1
+CPDV1001  CB1005                       7          GS1000      -1
+CPOS1003  CB1005                       7          GS1000      -1
+CPCB1005  GS1000                       7          GS1000      -1
+CPGS1000   CB910                       1
+CP RF902   CB910                       7          GS1000      -1
+CPTRF918  TDV916                       7          GS1000      -1
+CPTDV916  TRF915                       7          GS1000      -1
+CPTRF915  TRF914                       7          GS1000      -1
+CPTRF914  TRF913                       7          GS1000      -1
+** add control point for Application No. 5595
+CPTRF913    5595                       7          GS1000      -1
+CP  5595  TDV911                       7          GS1000      -1
+**CPTRF913  TDV911                       4          GS1000      -1
+CPTDV911   CB910                       7          GS1000      -1
+CP CB910   CB905                       7          GS1000      -1
+CPTDV901   CB905                       7          GS1000      -1
+CP CB905   GS900                       7          GS1000      -1
+CP GS900   CB510                       7          GS1000      -1
+CP CB510   GS500                       7           GS500      -1
+CP GS500   CB230                       1
+CP WM824  WRF824                       7          WGS800      -1
+CPWRF824  WCB825                       7          WGS800      -1
+CPWRF823  WRF822                       7          WGS800      -1
+CPWRF822  WCB825                       7          WGS800      -1
+CPWCB825  WCB821                       7          WGS800      -1
+CPWRF821  WCB821                       7          WGS800      -1
+CP WM827  WCB821                       7          WGS800      -1
+CPWRF828  WCB821                       7          WGS800      -1
+CPWCB821  WCB820                       7          WGS800      -1
+CPWDV818  WDV817                       7          WGS800      -1
+CPWDV817  WDV816                       7          WGS800      -1
+CPWDV816  WDV815                       7          WGS800      -1
+CPWDV815  WDV814                       7          WGS800      -1
+CPWDV814  WDV813                       7          WGS800      -1
+CPWDV813  WDV811                       7          WGS800      -1
+CPWDV812  WDV811                       7          WGS800      -1
+CPWDV811  WDV810                       7          WGS800      -1
+CPWDV810  WDV809                       7          WGS800      -1
+CPWDV809  WDV808                       7          WGS800      -1
+CPWDV808  WDV807                       7          WGS800      -1
+CPWDV807  WRF805                       7          WGS800      -1
+** change cp routing to add Brandl app. 5706
+** CPWRF805  WDV804                       5          WGS800      -1
+CPWRF805    5706                       7          WGS800      -1
+CP  5706  WDV804                       7          WGS800      -1
+CPWDV804  WDV803                       7          WGS800      -1
+CPWDV803  WRF802                       7          WGS800      -1
+CPWRF802  WCB840                       7          WGS800      -1
+CPWDV887  WRF881                       7          WGS800      -1
+CPWRF882  WRF881                       7          WGS800      -1
+CPWRF881  WCB890                       7          WGS800      -1
+CPWRF888  WCB890                       7          WGS800      -1
+CPWCB890  WDV868                       7          WGS800      -1
+CPWDV868  WCB880                       7          WGS800      -1
+CPWCB880  WDV867                       7          WGS800      -1
+CPWDV867  WRF866                       7          WGS800      -1
+CPWRF866  WDV865                       7          WGS800      -1
+CPWDV865  WRF864                       7          WGS800      -1
+CPWRF864  WRF863                       7          WGS800      -1
+CPWRF863  WDV862                       7          WGS800      -1
+CPWDV862  WRF861                       7          WGS800      -1
+CPWRF861  WCB860                       7          WGS800      -1
+CPWRF872  WDV871                       7          WGS800      -1
+CPWDV871  WCB860                       7          WGS800      -1
+CPWCB860  WCB850                       7          WGS800      -1
+CPWRF857  WRF858                       7          WGS800      -1
+CPWRF858  WRF856                       7          WGS800      -1
+CPWRF856  WDV853                       7          WGS800      -1
+CPWDV855  WDV853                       7          WGS800      -1
+CPWDV853  WRF851                       7          WGS800      -1
+CPWRF851  WCB845                       7          WGS800      -1
+CPWRF852  WCB845                       7          WGS800      -1
+** Collins Application 5579
+** CPWCB845  WCB850                       4          WGS800      -1
+CPWCB845  557901                       7          WGS800      -1
+CP557901  WCB850                       7          WGS800      -1
+**
+CPWCB850  WRF844                       7          WGS800      -1
+CPWRF844  WDV843                       7          WGS800      -1
+CPWDV843  WRF842                       7          WGS800      -1
+CPWRF842  WRF841                       7          WGS800      -1
+CPWRF841  WCB840                       7          WGS800      -1
+CPWCB840  WDV801                       7          WGS800      -1
+CPWDV801  WCB830                       7          WGS800      -1
+CPWRF832  WRF831                       7          WGS800      -1
+CPWRF831  WCB830                       7          WGS800      -1
+CPWCB830  WCB820                       7          WGS800      -1
+CPWCB820  WGS800                       7          WGS800      -1
+CPWGS800  MCB710                       1
+CPERF728  EDV726                       7          WGS800      -1
+CPEDV726  ERF725                       7          WGS800      -1
+CPERF725  EDV724                       7          WGS800      -1
+CPEDV724  EDV723                       7          WGS800      -1
+CPEDV723  ERF722                       7          WGS800      -1
+CPERF722  EDV721                       7          WGS800      -1
+CPEDV721  ECB720                       7          WGS800      -1
+CPEDV734  EDV733                       7          WGS800      -1
+CPEDV733  EDV731                       7          WGS800      -1
+CPEDV731  ECB720                       7          WGS800      -1
+CPECB720  EDV712                       7          WGS800      -1
+CPEDV712  ERF711                       7          WGS800      -1
+CPERF711  MCB710                       7          WGS800      -1
+CPMCB710   GS700                       7          WGS800      -2
+CP GS700   CB230                       7          WGS800      -2
+CP CB230  DV221A                       7           GS300      -2
+CPDV221A  DV221B                       7           GS300      -2
+CPDV221B  RSRTRN                       7           GS300      -2
+CPRSRTRN   WQ004                       7           GS300      -2
+CP WQ004   CB210                       7           GS300      -2
+CP CB210   WQ003                       7           GS300      -1
+CP WQ003   GS200                       7           GS300      -1
+CP GS200   DV201                       7           GS300      -1
+CP DV201   GS100                       7           GS300      -1
+CP GS100   WQ001                       7           GS300      -1
+CP WQ001   EP000                       7           GS300      -1
+**CP EP000     OUT                       7           GS300      -1
+CP EP000     OUT                       1           GS300       0
+**Off Channel Reservoirs
+CP537041     OUT                       2    ZERO  GS1000        
+CP397841     OUT                       2    ZERO   GS300        
+CP207741     OUT                       2    ZERO   GS550        
+CP391241     OUT                       2    ZERO   GS500        
+CP391041     OUT                       2    ZERO  GS1000        
+CP390541     OUT                       2    ZERO  GS1000        
+CP425241     OUT                       2    ZERO  GS1000        
+CP424141     OUT                       2    ZERO  WGS800        
+CP390941     OUT                       2    ZERO  WGS800        
+** fake CP for Texana's offchannel reservoir used to simulate interruptible water availability.
+CP  NOUT     OUT                       2    ZERO    ZERO      -1
+** Water Right Input
+** COLLINS APPLICATION 5579
+WR557901     200    557920020703   1                           3          5579_1
+SO                                                             1  
+** Add perpetual water right, Application No. 5595, gw as an alternate source
+IF  5595    2316       720000927                          IF5595 
+WR  5595    1550       320000927   1                           3          5595_1
+SO                                                             1   
+** Add perpetual water right, Application No. 5706, Brandl, gw as alternate source
+IF  5706    1664       720001001                          IF5706
+WR  5706   104.4       320001001   1                           3          5706_1
+SO                                                             1
+** Add perpetual water right, Application No. 4353, Permit #4085, term conv. perp., gw as alternate source
+IFTDV911    2316       719830418                         IF911_1
+WRTDV911     500       319830418   1                           3          4085_1
+SO                                                             1
+**Add perpetual water right, Application No. 5168, term conv. perp., gw as alternate source
+IFDV1018    3040    101819880202                        IF1018_1
+WRDV1018    1092       319880202   1   1    0.00  DV1018       3          5168_1
+WSON1018       2    1.00   0.727    0.00
+SO                                                             1
+WRDV1018     651       719880202   1   1    0.00  DV1018       3          5168_2
+WSHP1018     334    1.00   0.727    0.00
+SO           531     651                                       1  
+**
+**Add perpetual water right, Application No. 5370, term conv. perp. gw as alternate source
+IFTDV916   722.7     91619910701                         IF916_1
+WR537041     900       319910701   1   1    0.00  TDV916       3          5370_1
+WSTSO917     356    1.00   0.727    0.00
+SO           660     900  TDV916                               1 
+**Term water right, App. 4374 - Term Expired 12/31/03
+**IFWDV887    1331   IF88719830613       1    
+**WRWDV887     400       319830613   1   2    0.00                          4046_1
+**WSWSO886      98    1.00   0.727    0.00
+**SO           672      98
+**App. 5263, term converted to perpetual water right
+IFEDV723    2896       719891121       1                  IF5263
+WREDV724     140       319891121   1   1    0.00               3          5263_1
+SO                                                             1
+**
+WR DV402       0       719870424   1   1    0.00                          5130_1
+WS OS402    6.08    1.00   0.727    0.00
+WRTDV332      33       319610228   1   1    0.00                          2096_1
+WS OS332    12.0    1.00   0.727    0.00
+IF DV301    8688        19830103       1                  IF3978                                
+WR397841    1800       319830103   1   1    0.00                          3978_1 
+WS SO301   480.0    1.00   0.727    0.00
+SO         529.6    1800   DV301
+WR DV214  226.25       319391117   1   1    0.00                        61602099
+WR DV214   452.5       319391117   1   1    0.00                          2098_1
+IF DV214  4598.7   IF21419821122       1                  IF2098  
+WR DV214   747.5       319821122   1   1    0.00                          2098_2
+WR DV215  226.25       319391117   1   1    0.00                        61602100
+WR DV216      95       319391117   1   1    0.00                        61602097
+WR DV213    0.14       219970424   1   1    0.00                          5584_1
+WR DV212    1000       319391128   1   1    0.00                        61602101
+WR DV211    0.02       219970424   1   1    0.00                          5584_2
+WRTDV626       4       319541231   1   1    0.00                        61602075
+WSTOS627    1.75    1.00   0.727    0.00
+WR DV551    61.0       319490228   1   1    0.00                          2077_1
+WR207741     4.0       319561231   1   1    0.00                          2077_2
+WS SO552    10.0    1.00   0.727    0.00
+SO            99       4   DV551
+IF DV504  7240.0        19820208       1                  IF3912
+WR391241     340       319820208   1   1    0.00   RF505                  3912_1
+WS SO507   100.0    1.00   0.727    0.00
+SO         265.4     340   DV504
+WR DV501    1138       319030930   1   1    0.00                          2078_1
+WR DV501     450       319381210   1   1    0.00                          2078_2
+WRDV1042       0       719631007   1   1    0.00                        61602079
+WSOS1042   455.0    1.00   0.727    0.00
+WRDV1034     248       319381231   1   1    0.00                        61602080
+WRDV1031  683.27       319550430   1   1    0.00                        61602081
+IFDV1023  2801.7  IF102319811116       1                  IF3910
+WR391041    1000       319811116   1   1    0.00                          3910_1
+WSSO1024    63.0    1.00   0.727    0.00
+SO         410.6    1000  DV1023
+IFDV1021  3193.3  IF102119811116       1                  IF3905
+WR390541    1332       319811116   1   1    0.00                          3905_1
+WS O1021      84    1.00   0.727    0.00
+SO         624.6    1332  DV1021
+WRDV1020     932       319290331   1   1    0.00                        61602082
+WRDV1002     623       319480510   1   1    0.00                          2083_1
+WRDV1002    2400       319691027   1   1    0.00                          2083_2
+IFDV1001  5444.5  IF100119850416       1                  IF4252 
+WR425241    5500       319850416   1   1    0.00               3        11604252
+WSWOS824     4.9    1.00   0.727    0.00
+SO        2651.5    5500  DV1001                               1
+WRTDV901   400.0       319501110   1   1    0.00                        61602084
+** diversions for this water right are assumed to be at the most downstream diversion point
+WRWDV817      13       319621231   1   1    0.00                          2085_1
+IFWDV816   998.6   IF81619811116       1                  IF3906 
+WRWDV816     140       319811116   1   1    0.00                        11603906
+WSWOS816    20.0    1.00   0.727    0.00
+IFWDV815  1269.3   IF81519811116       1                  IF3904
+WRWDV815      60       319811116   1   1    0.00                        11603904
+IFWDV814   956.1   IF81419811116       1                  IF3908
+WRWDV814     279       319811116   1   1    0.00                        11603908
+** This water right has two diversion points and was 
+** modeled to take water from the main stem backed up by diversions from the trib
+WRWDV813     282       319550430   1   1    0.00                          2086_1
+SO                        WDV812
+WRWDV811      84       319460430   1   1    0.00                        61602087
+WSWOS811    20.0    1.00   0.727    0.00
+WRWDV810      45       319240430   1   1    0.00                        61602088
+WRWDV809      48       319660531   1   1    0.00                        61602089
+WRWDV808     527       319560331   1   1    0.00                        61602090
+IF DV503 11561.5   IF50319830222       1                  IF4102
+WR DV503      57       319830222   1   1    0.00   RF502       3        11604102
+SO                                                             1
+IFWDV807  4413.3   IF80719850430       1                  IF4241
+WR424141  272.63       319850430   1   1    0.00  WRF805       3        11604241
+WSWSO806    25.2    1.00   0.727    0.00
+SO         420.7  272.63  WDV807                               1  
+WRWDV804     290       319530331   1   1    0.00                        61602091
+IFWDV803  1448.0        19790129       1                  IF3665
+WRWDV803     211       319790129   1   1    0.00                        11603665
+WRWDV868     990       319450330   1   1    0.00                        61602092
+IFWDV865   724.0        19800121       1                  IF3725
+WRWDV865     420       319800121   1   1    0.00  WRF866                11603725
+IFWDV862   724.0        19810518       1                IF3876_1
+IFWDV871     362        19810518       1                IF3876_2
+**this water right has been modified to allow diversions from Porter's Creek with a backup from Lookout Creek
+WRWDV862     626       319810518   1   1    0.00  WRF863                  3876_1
+WRWDV871               319810518   1   1    0.00  WRF863                  3876_2
+BU
+** this water right has been modified to allow diversions from the reservoir backed up by diversions
+** from CPWDV855
+IFWDV853   362.0        19811207       1                  IF3911
+WRWDV853     400       319811207   1   1    0.00  WRF851                  3911_1
+WSWOS854     2.4    1.00   0.727    0.00
+SO                        WDV855
+IFWDV843  2929.5   IF84319810526       1                  IF3836
+WRWDV843     550       319810526   1   1    0.00  WRF844                  3836_1
+WRWDV801    1750       319640731   1   1    0.00                        61602093
+IFEDV726  3403.0        19811116       1                  IF3909
+WR390941     350       319811116   1   1    0.00  ERF728                11603909
+WSWSO727    45.0    1.00   0.727    0.00
+SO         148.8     350  EDV726
+IFEDV723  2896.0        19800121       1                  IF3727
+WREDV723     913       319800121   1   1    0.00  ERF722                11603727
+IFEDV721  3620.0        19811116       1                IF3907_1
+WREDV721     640       319811116   1   1    0.00                          3907_1
+WSEOS721     1.5    1.00   0.727    0.00
+WREDV734   398.7       319520430   1   1    0.00                          2094_1
+WREDV733   241.3       319520430   1   1    0.00                          2094_2
+IFEDV731  3620.0        19811116       1                IF3907_2
+WREDV731     520       319811116   1   1    0.00                          3907_2
+WSEOS732     1.5    1.00   0.727    0.00
+IFEDV712  1448.0        19811116       1                  IF3903
+WREDV712     800       319811116   1   1    0.00  ERF711                11603903
+**
+** Start Lake Texana (Navidad River)
+IFDV221B    3570        19720515       1       1             IF2
+IFDV221A  346972  BAYEST19720515       1       2             IF1  
+WRDV221A   75000      TA19720515   1   1                                 C2095_1 TEXANA1
+WSTEXANA  151919                                                                                        
+WRDV221A    4000      TA19820524   1   1                                 C2095_2 TEXANA1
+WSTEXANA  151919                                                                                        
+**
+WRDV221A   23700     INT20020702   1   1     1.0    NOUT       2        INTURUP1
+WSTEXANA  170300                          151919
+SO                                                                  7500                                         
+TO    14             LIM       0       1                             IF1
+** FINAL FILLUP FOR LAKE TEXANA
+WRDV221A       0        20020702   1                                      REFILL 
+WSTEXANA  170300
+** End Lake Texana
+**begin Stage 2 of Texana Project
+WR WQ002    7150       119720515   1   1    0.00                      61602095_3 TEXANA2
+WSSTAGE2   93344                     
+WR WQ002   22850       219720515   1   1    0.00                      61602095_4 TEXANA2
+WSSTAGE2   93344
+WR WQ002   18122  BAYES119931006   1   1     1.0   20955                  2095_5
+**
+**end Stage 2 of Texana Project
+WR DV201    0.01       219970424   1   2    0.00                          5584_5
+**
+**
+**
+** Lake Texana Area-Capacity Data
+**
+** area capacity of Texana based on revised table by TWDB from LNRA on March 14, 2001
+** ELEVATION -13       0      10      13      18      24      30      36      39      43      44      45          
+SVTEXANA       0      70    1645    4634   14558   33860   60576   96096  118078  151919  161085  170300
+SATEXANA       0      23     634    1354    2601    3820    5132    6824    7849    8974    9727   10484 
+**
+SVSTAGE2       0     133     563    1388    4168   11301   24320   43358   68338   93344  116279  147046
+SASTAGE2       0      53     119     211     901    1952    3256    4359    5633    6870    8420   11234
+** DROUGHT INDEX RECORDS for B&E when below 78.18% conservation
+DI     1   0   1  TEXANA         
+IS     6       0   10000  100000  133140  133141  170300
+IP           100     100     100     100       0       0
+**
+** DROUGHT INDEX RECORDS for B&E when above 78.18% conservation
+DI     2   0   1  TEXANA  
+IS     6       0   10000  100000  133140  133141  170300
+IP             0       0       0       0     100     100
+**
+** DROUGHT INDEX RECORDS water rights that have the 43 ft msl restriction.
+DI     3   0   1  TEXANA        
+IS     6       0   10000  100000  151918  151919  170300
+IP             0       0       0       0     100     100
+**
+** the following reservoirs are not associated with a water right
+** and are included for possible future modeling needs
+**WRTOS323       0       830000101
+**WSTX5494     146    1.00   0.727    0.00
+**WRTOS321       0       730000101
+**WSTX3992     144    1.00   0.727    0.00
+**WRTOS313       0       130000101
+**WSTX3986     280    1.00   0.727    0.00
+**WRTOS312       0       130000101
+**WSTX3985     173    1.00   0.727    0.00
+**WRTOS311       0       130000101
+**WSTX3984     144    1.00   0.727    0.00
+**WR OS623       0       730000101
+**WSTX6176     296    1.00   0.727    0.00
+**WRTOS554       0       830000101
+**WSTX3929     278    1.00   0.727    0.00
+**WROS1003       0       830000101
+**WSTX1571     108    1.00   0.727    0.00
+**WROS1052       0       130000101
+**WSTX3928     336    1.00   0.727    0.00
+**WROS1051       0       130000101
+**WSTX3977     250    1.00   0.727    0.00
+**WROS1033       0       130000101
+**WSTX3971     112    1.00   0.727    0.00
+** End of .dat data input file
+**
+ED
